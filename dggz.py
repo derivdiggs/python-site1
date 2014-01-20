@@ -101,7 +101,7 @@ def build_dggz_db():
     ]
     last_names = [
         'Diggs', 'Murphy', 'Ripper', 'Seagan', 'DaVinci', 'Murry', 'Davis', 'Kardasian',
-        'Alba', 'Edison', 'Booboo', 'Kennedy', 'Clinton', 'Nelson-Riley', 'Riley', 'Conners',
+        'Alba', 'Edison', 'Booboo', 'Kennedy', 'Clinton', 'Nelson', 'Riley', 'Conners',
         'Bush', 'Martin', 'Tell', 'Brown', 'Brown', 'Love', 'Button', 'Cox', 'Alexander'
     ]
 

@@ -3,6 +3,33 @@ body {
 	color:#669;
 }
 
+/*main tables*/
+.table-bordered {
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgb(221, 215, 244);
+	/*border-color: rgb(221, 221, 221) rgb(221, 221, 221) rgb(221, 221, 221) -moz-use-text-color;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-collapse: separate;
+    border-radius: 4px;*/
+}
+
+
+.table-bordered td {
+    border: 1px solid #f6f4fd;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #f6f4fd;
+}
+/*top border of table head*/
+.table-bordered caption + thead tr:first-child th, .table-bordered caption + tbody tr:first-child th, .table-bordered caption + tbody tr:first-child td, .table-bordered colgroup + thead tr:first-child th, .table-bordered colgroup + tbody tr:first-child th, .table-bordered colgroup + tbody tr:first-child td, .table-bordered thead:first-child tr:first-child th, .table-bordered tbody:first-child tr:first-child th, .table-bordered tbody:first-child tr:first-child td {
+    border-top: 1px solid #f6f4fd;
+}
 
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
 	color: #669;
