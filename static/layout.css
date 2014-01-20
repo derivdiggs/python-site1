@@ -1,0 +1,102 @@
+body {
+	background:#ebe7fa;
+	color:#669;
+}
+
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+	color: #669;
+	background-color: rgb(221, 215, 244);
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	/*margin-top: 10px;	*/
+}
+/*top menu*/
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+	color: #669;
+}
+/*every other row*/
+.table-striped tbody > tr:nth-child(2n+1) > td, .table-striped tbody > tr:nth-child(2n+1) > th {
+    background-color: rgb(221, 215, 244);
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+	color:#669; ;
+    background-color: rgb(221, 215, 244);
+}
+
+a {
+	color: rgb(166, 124, 219);
+}
+
+.nav-tabs > li > a, .nav-pills > li > a {
+	color: rgb(166, 124, 219);
+	margin-top: 10px;
+}
+
+.navbar-inner {
+	background:#f6f4fd;
+}
+/*list menu*/
+.nav-tabs {
+    border-bottom: 8px solid rgb(221, 215, 244);
+	margin-bottom: 0;
+}
+
+/*search field*/
+.btn, textarea, input[type], button, .model-list {
+    border-radius: 5px;
+	margin-top: 5px;
+	/*height: 15px;*/
+}
+
+#content {
+	background: #ebe7fa;
+	border: 2px solid #66C;
+	padding: 12px;
+	overflow: scroll;
+}
+
+#brand {
+	float: left;
+	font-weight: 300;
+	margin: 0;
+}
+
+.brand {
+	color:#0F0;
+}
+
+.search-form {
+	margin: 0 5px;
+}
+
+.search-form form {
+	margin: 0;
+}
+
+.btn-menu {
+    margin: 4px 5px 0 0;
+    float: right;
+}
+
+.btn-menu a, .btn-menu input {
+	padding: 7px 16px !important;
+	border-radius: 15 !important;
+}
+
+.btn, textarea, input[type], button, .model-list {
+	border-radius: 0;
+}
+
+.model-list {
+	border-radius: 0;
+}
+
+.nav-pills li > a {
+	border-radius: 0;
+}
+
+.select2-container .select2-choice {
+	border-radius: 0;
+}
