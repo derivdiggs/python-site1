@@ -25,6 +25,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Unicode(64))
     email = db.Column(db.Unicode(64))
+    tmppass = db.Column(db.Unicode(64))
 
     def __unicode__(self):
         return self.name
@@ -49,7 +50,7 @@ class CustomView(ModelView):
 
 class UserAdmin(CustomView):
     column_searchable_list = ('name',)
-    column_filters = ('name', 'email')
+    column_filters = ('name', 'email', 'tmppass')
 
 # Create custom admin views
 
@@ -109,6 +110,18 @@ def build_dggz_db():
         user = User()
         user.name = first_names[i] + " " + last_names[i]
         user.email = first_names[i].lower() + "." + last_names[i].lower() + "@example.com"
+        tmppass_first = ""
+        tmppass_last = ""
+        for t in range(3):
+            if first_names[i].lower()[t] != "":
+                tmppass_first += first_names[i].lower()[t]
+            else:
+                tmppass_first += "x"
+            if last_names[i].lower()[t] != "":
+                tmppass_last += last_names[i].lower()[t]
+            else:
+                tmppass_last += "x"
+        user.tmppass = tmppass_first + tmppass_last
         db.session.add(user)
 
     sample_text = [
