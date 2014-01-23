@@ -1,0 +1,31 @@
+body {
+	background:#ebe7fa;
+	color:#669;
+}
+
+/*main tables*/
+.table-bordered {
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgb(221, 215, 244);
+	border-radius: 4px;*/
+	/*border-color: rgb(221, 221, 221) rgb(221, 221, 221) rgb(221, 221, 221) -moz-use-text-color;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-collapse: separate;
+    border-radius: 4px;*/
+}
+
+
+.table-bordered td {
+    background-color: #ffffff;
+	width: 100px;
+	height: 100px;
+	border: 1px solid rgb(221, 215, 244);
+	text-align: center;
+}
+
+

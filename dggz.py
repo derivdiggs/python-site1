@@ -7,8 +7,25 @@ from flask.ext.sqlalchemy import SQLAlchemy
 import os
 import os.path as op
 
+
 # Create App	
 app = Flask(__name__)
+
+
+# create boxes on bio page
+
+class StringObj(object):
+    row=[]
+    col=[]
+    cnt=0
+    for i in range(3):
+        col=[]
+        for t in range(3):
+            cnt += 1
+            col.append('box'+str(cnt))
+        row.insert(i, col)
+           
+myVar = StringObj().row
 
 # Create secret key 
 app.config['SECRET_KEY'] = '123456790'
@@ -54,12 +71,15 @@ class UserAdmin(CustomView):
 
 # Create custom admin views
 
+    
 class BioView(BaseView):
     @expose('/')
     def index(self):
 		#url = url_for('.test1')
-        return self.render('bio.html')
-		
+        #return self.render('bio.html', test="foo")
+        global myVar
+        return self.render('bio.html',test = myVar)
+
 class TestDropView1(BaseView):
     @expose('/')
     def index(self):
