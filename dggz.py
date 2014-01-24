@@ -14,18 +14,23 @@ app = Flask(__name__)
 
 # create boxes on bio page
 
-class StringObj(object):
-    row=[]
-    col=[]
-    cnt=0
-    for i in range(3):
+class CheckerBox(object):
+    def __init__(self, rows):
+        self.rows = rows
+    def makeCheckers(self):
+        row=[]
         col=[]
-        for t in range(3):
-            cnt += 1
-            col.append('box'+str(cnt))
-        row.insert(i, col)
-           
-myVar = StringObj().row
+        cnt=0
+        for i in range(self.rows):
+            col=[]
+            for t in range(self.rows):
+                cnt += 1
+                col.append('box '+str(cnt))
+            row.insert(i, col)
+        return row
+        
+myChecks = CheckerBox(8) 
+myVar = myChecks.makeCheckers()
 
 # Create secret key 
 app.config['SECRET_KEY'] = '123456790'
