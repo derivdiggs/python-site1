@@ -73,11 +73,20 @@ class UserAdmin(CustomView):
 
 # Create custom admin views
 
-    
+cnt = 0
+
 class BioView(BaseView):
     @expose('/', methods=['POST', 'GET'])
     def index(self):
-        boxesper = request.args['boxesper']
+        """"
+        This is a work around that must be fixed!!
+        """
+        global cnt
+        cnt += 1
+        if cnt != 1:
+            boxesper = request.args['boxesper']
+        else:
+            boxesper = 3
         return self.render('bio.html',test=makeCheckers(boxesper))
 
 class TestDropView1(BaseView):
