@@ -1,4 +1,4 @@
-from flask import Flask, url_for
+from flask import Flask, url_for, request
 from flask.ext.admin import Admin, BaseView, expose
 from flask.ext.admin.contrib.sqla import ModelView
 from flask.ext.admin.contrib.fileadmin import FileAdmin
@@ -14,23 +14,20 @@ app = Flask(__name__)
 
 # create boxes on bio page
 
-class CheckerBox(object):
-    def __init__(self, rows):
-        self.rows = rows
-    def makeCheckers(self):
-        row=[]
+
+def makeCheckers(rows):
+    rows = int(rows)
+    row=[]
+    col=[]
+    cnt=0
+    for i in range(rows):
         col=[]
-        cnt=0
-        for i in range(self.rows):
-            col=[]
-            for t in range(self.rows):
-                cnt += 1
-                col.append('box '+str(cnt))
-            row.insert(i, col)
-        return row
+        for t in range(rows):
+            cnt += 1
+            col.append('box '+str(cnt))
+        row.insert(i, col)
+    return row
         
-myChecks = CheckerBox(8) 
-myVar = myChecks.makeCheckers()
 
 # Create secret key 
 app.config['SECRET_KEY'] = '123456790'
@@ -78,12 +75,10 @@ class UserAdmin(CustomView):
 
     
 class BioView(BaseView):
-    @expose('/')
+    @expose('/', methods=['POST', 'GET'])
     def index(self):
-		#url = url_for('.test1')
-        #return self.render('bio.html', test="foo")
-        global myVar
-        return self.render('bio.html',test = myVar)
+        boxesper = request.args['boxesper']
+        return self.render('bio.html',test=makeCheckers(boxesper))
 
 class TestDropView1(BaseView):
     @expose('/')
@@ -100,6 +95,10 @@ class TestDropView2(BaseView):
 @app.route('/')
 def index():
     return '<a href="/admin/">Click me to get to Admin!</a>'
+    
+@app.route('/bio')
+def testrun():
+    return 'the script actually ran'
 	
 # Create admin interface
 
@@ -191,4 +190,5 @@ if __name__ == '__main__':
         build_dggz_db()
 
     # Start app
+    app.debug = True
     app.run()
